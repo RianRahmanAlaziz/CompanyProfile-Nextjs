@@ -6,12 +6,13 @@ import AboutUs from "@/Components/AboutUs";
 import OurServices from "@/Components/OurServices";
 import Portfolio from "@/Components/Portfolio";
 import Footer from "@/Components/Footer";
+import Contact from '@/Components/Contact';
 
 
 
 export default function Home() {
   const fullpageOptions = {
-    anchors: ["Banner", "AboutUs", "OurServices", "Portfolio"],
+    anchors: ["", "AboutUs", "OurServices", "Portfolio", "ContactUs"],
     scrollingSpeed: 1000,
     licenseKey: "gplv3-license",
     menu: "#sidebar",
@@ -31,12 +32,13 @@ export default function Home() {
                 <AboutUs />
                 <OurServices />
                 <Portfolio />
+                <Contact />
               </ReactFullpage.Wrapper>
             );
           }}
         />
       </div>
-      {/* <Footer /> */}
+
     </>
   );
 }

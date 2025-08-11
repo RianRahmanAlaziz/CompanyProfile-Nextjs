@@ -3,6 +3,23 @@ import Link from 'next/link'
 import React from 'react'
 
 function Navbar() {
+    // Fungsi untuk mengatur navigasi antar bagian menggunakan fullpage.js
+    const handleMoveToSection = (index) => {
+        if (window.fullpage_api) {
+            window.fullpage_api.moveTo(index);
+        }
+    };
+    // Fungsi untuk menentukan apakah bagian tertentu aktif
+    const containIsActive = (index) => {
+        if (window.fullpage_api) {
+            const activeSection = window.fullpage_api.getActiveSection();
+            console.log("Active Section Index:", activeSection.index); // Debugging untuk memeriksa index
+            if (activeSection.index === index) {
+                return "li active"; // Mengembalikan class 'active' jika bagian tersebut aktif
+            }
+        }
+        return "li"; // Default class jika tidak aktif
+    };
     return (
         <div
             className="fixed top-0 left-0 w-full z-50 bg-base-100 bg-opacity-70 backdrop-blur-md lg:px-[100px] navbar shadow-sm">
@@ -16,28 +33,33 @@ function Navbar() {
                     </div>
                     <ul tabIndex="0" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <li>
-                            <Link
-                                href="/#Aboutus">
+                            <button
+                                onClick={() => handleMoveToSection(2)}
+                            >
                                 About Us
-                            </Link>
+                            </button>
                         </li>
                         <li>
-                            <Link
-                                href="/ourservice">
+                            <button
+                                onClick={() => handleMoveToSection(3)}
+                            >
                                 Our Service
-                            </Link>
+                            </button>
                         </li>
                         <li>
-                            <Link
-                                href="/product">
+                            <button
+                                onClick={() => handleMoveToSection(4)}
+                            >
                                 Product
-                            </Link>
+                            </button>
                         </li>
                         <li>
-                            <Link
-                                href="/contactus">
+                            <button
+                                onClick={() => handleMoveToSection(5)}
+                            >
                                 Contact Us
-                            </Link>
+                            </button>
+
                         </li>
                     </ul>
                 </div>
@@ -49,30 +71,35 @@ function Navbar() {
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li>
-                        <Link
-                            href="/aboutus">
+                <ul className="menu menu-horizontal px-1" id="sidebar">
+                    <li className="active">
+                        <button
+                            onClick={() => handleMoveToSection(2)}
+                        >
                             About Us
-                        </Link>
+                        </button>
                     </li>
                     <li>
-                        <Link
-                            href="/ourservice">
+                        <button
+                            onClick={() => handleMoveToSection(3)}
+                        >
                             Our Service
-                        </Link>
+                        </button>
                     </li>
                     <li>
-                        <Link
-                            href="/product">
+                        <button
+                            onClick={() => handleMoveToSection(4)}
+                        >
                             Product
-                        </Link>
+                        </button>
                     </li>
                     <li>
-                        <Link
-                            href="/contactus">
+                        <button
+                            onClick={() => handleMoveToSection(5)}
+                        >
                             Contact Us
-                        </Link>
+                        </button>
+
                     </li>
                 </ul>
             </div>
