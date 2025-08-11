@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
-import { NextArrow, PrevArrow } from '@/components/Arrow';
+import { NextArrow, PrevArrow } from '@/Components/Arrow';
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

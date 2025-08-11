@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import useWindowSize from "@/hooks/useWindowSize"; // pastikan path sesuai
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { NextArrow, PrevArrow } from '@/components/Arrow';
-import Footer from "./Footer";
+import { NextArrow, PrevArrow } from '@/Components/Arrow';
+
 
 const images = [
     { src: "/image/bg.jpg", alt: "Project 1" },
