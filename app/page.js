@@ -1,4 +1,5 @@
 'use client'
+import React, { useState } from "react";
 import ReactFullpage from '@fullpage/react-fullpage';
 import Navbar from "@/Components/Navbar";
 import Banner from "@/Components/Banner";
@@ -11,17 +12,21 @@ import Contact from '@/Components/Contact';
 
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState(1);
+
   const fullpageOptions = {
-    anchors: ["", "AboutUs", "OurServices", "Portfolio", "ContactUs"],
+    anchors: ["Home", "AboutUs", "OurServices", "Portfolio", "ContactUs"],
     scrollingSpeed: 1000,
     licenseKey: "gplv3-license",
-    menu: "#sidebar",
     lockAnchors: false,
+    afterLoad: (origin, destination) => {
+      setActiveSection(destination.index);
+    },
   };
 
   return (
     <>
-      <Navbar />
+      <Navbar activeSection={activeSection} />
       <div>
         <ReactFullpage
           {...fullpageOptions}

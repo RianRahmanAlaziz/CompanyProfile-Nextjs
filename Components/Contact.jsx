@@ -1,17 +1,26 @@
 "use client";
+import { motion } from "framer-motion";
 
 import Footer from "./Footer";
 
 function Contact() {
     return (
-        <div className="section min-h-screen flex flex-col bg-[#0f172a] text-white">
+        <div className="section min-h-screen flex flex-col bg-[#0f172a] text-white" data-anchor="ContactUs">
 
             {/* Bagian Konten (flex-1 supaya sisa layar diisi) */}
             <section className="flex-1 px-6 md:px-20 flex items-center py-20">
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center w-full">
-
                     {/* Bagian Kiri - Info Kontak */}
-                    <div>
+                    <motion.div
+                        initial={{ x: -200, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{
+                            type: "spring",
+                            delay: 0.01,
+                            // kasih transisi default khusus untuk scale
+                            scale: { type: "tween", duration: 0.1 }
+                        }}
+                    >
                         <h3 className="text-4xl font-bold mb-4 text-cyan-400 ">Contact US</h3>
                         <p className="text-gray-400 mb-6">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos soluta modi, quidem fugiat debitis voluptatum nisi! Ducimus officiis eos suscipit illo, labore ut modi sed? Nulla laudantium doloribus atque officia quos mollitia non sunt neque, expedita tempore, ea quod quis! Deleniti eum, distinctio et earum quisquam nam expedita sit dicta. Sed tenetur dolorum eligendi? Facere ipsam dignissimos possimus natus veniam nostrum, corrupti optio, molestiae aliquid similique et tempore voluptatibus voluptatem a, temporibus amet doloribus quae minus cum suscipit sed ipsum ullam quis! Magnam consequuntur provident, quidem temporibus possimus quasi rerum illo qui sed. Fugiat neque nostrum temporibus consectetur ab eum.
@@ -28,10 +37,19 @@ function Contact() {
                         <div className="flex items-center space-x-3">
                             <span>bvs@gmail.com</span>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Bagian Kanan - Form Kontak */}
-                    <div className="bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <motion.div
+                        initial={{ x: 200, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{
+                            type: "spring",
+                            delay: 0.01,
+                            // kasih transisi default khusus untuk scale
+                            scale: { type: "tween", duration: 0.1 }
+                        }}
+                        className="bg-gray-800 p-8 rounded-xl shadow-lg">
                         <form className="space-y-6">
                             <div>
                                 <label className="block mb-1">Name</label>
@@ -64,7 +82,7 @@ function Contact() {
                                 Send Letter
                             </button>
                         </form>
-                    </div>
+                    </motion.div>
 
                 </div>
             </section>
