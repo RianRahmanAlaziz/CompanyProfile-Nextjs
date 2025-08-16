@@ -11,9 +11,9 @@ import Image from "next/image";
 import banner1 from "@/public/image/bg.jpg";
 import banner2 from "@/public/image/bg2.jpg";
 import banner3 from "@/public/image/bg.jpg";
-import mobile1 from "@/public/image/mobile.jpeg";
-import mobile2 from "@/public/image/mobile.jpeg";
-import mobile3 from "@/public/image/mobile.jpeg";
+import mobile1 from "@/public/image/mobile.jpg";
+import mobile2 from "@/public/image/mobile1.jpg";
+import mobile3 from "@/public/image/mobile.jpg";
 
 const banners = [banner1, banner2, banner3];
 const mobiles = [mobile1, mobile2, mobile3];
