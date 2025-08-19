@@ -8,7 +8,7 @@ import HorizontalLine from './HorizontalLine';
 function AboutUs() {
     return (
         <div className="section" data-anchor="AboutUs">
-            <section className="w-full bg-[#0f172a] px-8 lg:px-[100px] h-screen text-white flex flex-col justify-center">
+            <section className="w-full bg-[#0f172a] px-8 lg:px-[100px] min-h-screen text-white flex flex-col justify-center">
                 {/* <!-- About Us Top --> */}
                 <div className="flex flex-col lg:flex-row items-center gap-10 w-full ">
                     {/* <!-- Left Text --> */}
@@ -18,10 +18,10 @@ function AboutUs() {
                         transition={{
                             delay: 0.1
                         }}
-                        className="flex-1 mt-14">
+                        className="flex-1 mt-16 md:mt-14">
                         <h3 className="text-primary text-xl font-semibold mb-2">About Us</h3>
-                        <h1 className="text-4xl font-bold mb-4">We Always Serve Better.</h1>
-                        <p className="text-base leading-relaxed text-gray-300">
+                        <h1 className="text-base md:text-4xl font-bold mb-4">We Always Serve Better.</h1>
+                        <p className="text-sm leading-relaxed text-gray-300">
                             Ahwan Solution is a service provider specializing in website and web application development,
                             focused on delivering solutions that are simple, functional, and tailored to your needs.
                             We believe that technology should be accessible to everyone. That’s why we take a more flexible
@@ -30,7 +30,7 @@ function AboutUs() {
                         </p>
                     </motion.div>
                     {/* <!-- Right Image --> */}
-                    <div className="flex-1">
+                    <div className="flex-1 hidden">
                         <motion.div
                             initial={{ x: 200, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
@@ -49,7 +49,7 @@ function AboutUs() {
                                 transition: { duration: 0.1 } // transisi tap lebih singkat
                             }}
 
-                            className="rounded-xl overflow-hidden shadow-lg w-64 h-64 mx-auto mt-14">
+                            className="rounded-xl overflow-hidden shadow-lg w-64 h-64 mx-auto md:mt-16 ">
                             <Image
                                 src={banner}
                                 className="w-full h-full object-cover"
@@ -61,7 +61,7 @@ function AboutUs() {
                 {/* <!-- Garis Pemisah Horizontal --> */}
                 <HorizontalLine />
                 {/* <!-- Visi Misi Bottom --> */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* <!-- Visi --> */}
                     <motion.div
                         initial={{ x: -200, opacity: 0 }}
@@ -116,8 +116,8 @@ function AboutUs() {
                         </motion.svg>
 
                         {/* Konten */}
-                        <h3 className="text-xl font-bold mb-3">Our Vision</h3>
-                        <p className="text-base text-gray-300 leading-relaxed">
+                        <h3 className="text-base md:text-xl font-bold mb-3">Our Vision</h3>
+                        <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                             Becoming a digital partner in helping deliver technology solutions that
                             are simple, relevant, and very accessible to everyone.
                         </p>
@@ -131,7 +131,7 @@ function AboutUs() {
                             type: "spring",
                             delay: 0.9
                         }}
-                        className="relative p-6 rounded-lg max-w-lg">
+                        className="relative p-4 rounded-lg max-w-lg">
                         {/* SVG border */}
                         <motion.svg
                             className="absolute top-0 left-0 w-full h-full pointer-events-none"
@@ -175,8 +175,8 @@ function AboutUs() {
                         </motion.svg>
 
                         {/* Konten */}
-                        <h3 className="text-xl font-bold mb-3">Our Mission</h3>
-                        <ul className="list-disc list-inside space-y-2 text-base text-gray-300">
+                        <h3 className="ext-base md:text-xl font-bold mb-3">Our Mission</h3>
+                        <ul className="list-disc list-inside space-y-2 text-sm md:text-base text-gray-300">
                             <li>
                                 Design and develop websites and web applications that are simple,
                                 functional, and tailored to each client's needs.

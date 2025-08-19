@@ -37,7 +37,7 @@ function Portfolio() {
     };
     return (
         <div className="section" data-anchor="Portfolio">
-            <section className="h-screen bg-[#0f172a] text-white flex flex-col justify-center">
+            <section className="min-h-screen bg-[#0f172a] text-white flex flex-col justify-center">
                 <motion.div
                     initial={{ y: 200, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -48,9 +48,9 @@ function Portfolio() {
                         scale: { type: "tween", duration: 0.1 }
                     }}
                     className="text-center mb-12">
-                    <h4 className="text-cyan-400 text-lg font-semibold mb-2">Portofolio</h4>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">What We've Done</h2>
-                    <p className="text-gray-400 w-full mx-auto max-w-2xl">
+                    <h4 className="text-cyan-400 text-xl font-semibold mb-2">Portofolio</h4>
+                    <h2 className="text-xl md:text-4xl font-bold mb-4">What We've Done</h2>
+                    <p className="text-gray-400 w-full mx-auto max-w-2xl text-sm md:text-base px-2 md:px-0">
                         We've had the opportunity to collaborate on meaningful digital projects across different needs and ideas.
                         Here's a glimpse of what we've created.
                     </p>
@@ -74,9 +74,6 @@ function Portfolio() {
                 </Slider>
             </section>
         </div>
-
-
-
     )
 }
 

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 function HorizontalLine() {
     return (
         <svg
-            className="w-full lg:my-[50px]"
+            className="w-full my-[30px] lg:my-[50px]"
             height="1"
             viewBox="0 0 100 1"
             preserveAspectRatio="none"
